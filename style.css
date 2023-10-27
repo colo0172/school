@@ -1,238 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+
 *{margin: 0;}
 
-@keyframes ColorBackground {
-    0%   { background: #001aff; }
-    25%  { background: #8c00ff; }
-    50%  { background: #4c00ff; }
-    75%  { background: #bb00ff; }
-    100%  { background: #001aff; }
-  }
+canvas {display: block;}
+body {background: black;}
 
-  body
-  {
-    background: #000000;
-    animation: ColorBackground 20s infinite linear;
-    text-align: center;
-    margin: 0;
-  }
-
-}
-section{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #3586ff;
-  overflow: hidden;
-}
-section .air{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
-  background-size: 1000px 100px
-}
-section .air.air1{
-  animation: wave 30s linear infinite;
-  z-index: 1000;
-  opacity: 1;
-  animation-delay: 0s;
-  bottom: 0;
-}
-section .air.air2{
-  animation: wave2 15s linear infinite;
-  z-index: 999;
-  opacity: 0.5;
-  animation-delay: -5s;
-  bottom: 10px;
-}
-section .air.air3{
-  animation: wave 30s linear infinite;
-  z-index: 998;
-  opacity: 0.2;
-  animation-delay: -2s;
-  bottom: 15px;
-}
-section .air.air4{
-  animation: wave2 5s linear infinite;
-  z-index: 997;
-  opacity: 0.7;
-  animation-delay: -5s;
-  bottom: 20px;
-}
-@keyframes wave{
-  0%{
-    background-position-x: 0px; 
-  }
-  100%{
-    background-position-x: 1000px; 
-  }
-}
-@keyframes wave2{
-  0%{
-    background-position-x: 0px; 
-  }
-  100%{
-    background-position-x: -1000px; 
-  }
-}
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
-.cubes {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  font-family: "Montserrat", sans-serif;
-}
-
-.cube {
-  position: absolute;
-  top: 80vh;
-  left: 45vw;
-  width: 10px;
-  height: 10px;
-  border: solid 1px #ffffff;
-  transform-origin: top left;
-  transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  -webkit-animation: cube 12s ease-in forwards infinite;
-          animation: cube 12s ease-in forwards infinite;
-}
-.cube:nth-child(2n) {
-  border-color: #ffffff;
-}
-.cube:nth-child(2) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  left: 25vw;
-  top: 40vh;
-}
-.cube:nth-child(3) {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  left: 50vw;
-  top: 50vh;
-}
-.cube:nth-child(4) {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-  left: 90vw;
-  top: 10vh;
-}
-.cube:nth-child(5) {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-  left: 10vw;
-  top: 85vh;
-}
-.cube:nth-child(6) {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  left: 60vw;
-  top: 10vh;
-}
-.cube:nth-child(7) {
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
-  left: 80vw;
-  top: 25vh;
-}
-.cube:nth-child(8) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  left: 40vw;
-  top: 80vh;
-}
-.cube:nth-child(9) {
-  -webkit-animation-delay: 7s;
-          animation-delay: 7s;
-  left: 35vw;
-  top: 60vh;
-}
-
-@-webkit-keyframes cube {
-  from {
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);
-    opacity: 1;
-  }
-  to {
-    transform: scale(20) rotate(1500deg) translate(-50%, -50%);
-    opacity: 0;
-  }
-}
-
-@keyframes cube {
-  from {
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);
-    opacity: 1;
-  }
-  to {
-    transform: scale(20) rotate(1500deg) translate(-50%, -50%);
-    opacity: 0;
-  }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
-.TitleText
+.homeScreen
 {
-  padding: 3vw;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.2);
+  z-index: 100;
+  color: #20C20E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Anonymous Pro', monospace;
+  background: rgba(255, 255, 255, 0.16);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.9px);
--webkit-backdrop-filter: blur(4.9px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+backdrop-filter: blur(2px);
+-webkit-backdrop-filter: blur(2px);
+border: 1px solid rgba(255, 255, 255, 1);
+padding: 5vh 5vw;
 }
 
-.Title
+.homeScreen h1
 {
-  font-family: 'Source Code Pro', monospace;;
+  font-size: 5vw;
+  margin: 0;
 }
 
-.typewriter h1 {
-  overflow: hidden;
-  border-right: .15em solid orange; 
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: 
-    typing 7s steps(18, end) infinite,
-    blink-caret .75s step-end infinite;
+.homeScreen h2
+{
+  margin-top: -.5vw;
+  font: 2vw;
 }
-
-@keyframes typing {
-  0% { width: 0 }
-  45% { width: 100% }
-  55% { width: 100% }
-  100% { width: 0 }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
-.typewriter h2 {
-  overflow: hidden;
-  border-right: .15em solid orange; 
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: 
-    typing2 3.5s steps(29, end),
-    blink-caret .75s step-end infinite;
-    font-family: 'Source Code Pro', monospace;;
-    color: #c6c5c5;
-}
-
-@keyframes typing2 {
-  0% { width: 0 }
-  100% { width: 100% }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&family=Source+Code+Pro&display=swap');
